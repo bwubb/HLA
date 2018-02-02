@@ -49,7 +49,7 @@ echo "Reporting"
 $BIN/report.py -in $OUT/${ID}.hla -out $OUT/${ID}.json -subject $ID -sample $ID
 
 if [ "$FULL" = true ]; then
-    $BIN/full.r $OUT/${ID}.tsv.dna $OUT/${ID}.hla $OUT/${ID}.hla.full $CORE
+    $BIN/full.r $OUT/${ID}.tsv.dna $OUT/${ID}.hla $OUT/${ID}.hla.full
 fi
 
 # Clean up
