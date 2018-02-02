@@ -3,13 +3,14 @@
 set -eu -o pipefail
 
 [[ $# -lt 2 ]] && {
-    echo "usage: $(basename "$0") S3://path.bam sample_id [delete]";
+    echo "usage: $(basename "$0") S3://path.bam sample_id [core] [delete]";
     exit 1;
 }
 
 BIN="`dirname \"$0\"`"
 S3=$1
 ID=$2
+CORE=$3
 OUT=hla-$ID
 DELETE=false
 FULL=false
@@ -42,7 +43,7 @@ else
 fi
 
 echo "Typing"
-$BIN/typing.r $OUT/${ID}.tsv $OUT/${ID}.hla
+$BIN/typing.r $OUT/${ID}.tsv $OUT/${ID}.hla $CORE
 
 echo "Reporting"
 $BIN/report.py -in $OUT/${ID}.hla -out $OUT/${ID}.json -subject $ID -sample $ID
