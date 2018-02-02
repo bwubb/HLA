@@ -10,7 +10,7 @@ version = '1.2'
 
 def main():
 	parser = argparse.ArgumentParser()
-	parser.add_argument('-in', dest = 'input', type = file, required = True, help = 'Input file')
+	parser.add_argument('-in', dest = 'input', type = open, required = True, help = 'Input file')
 	parser.add_argument('-out', required = True, help = 'Output JSON')
 	parser.add_argument('-subject', required = True, help = 'Subject ID')
 	parser.add_argument('-sample', required = True, help = 'Sample ID')
