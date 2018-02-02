@@ -3,7 +3,7 @@
 set -eu -o pipefail
 
 [[ $# -lt 2 ]] && {
-    echo "usage: $(basename "$0") S3://path.bam sample_id [core] [delete]";
+    echo "usage: $(basename "$0") S3://path.bam sample_id [cores] [delete]";
     exit 1;
 }
 
