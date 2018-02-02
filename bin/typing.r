@@ -3,7 +3,7 @@
 
 args <- commandArgs()
 code.source <- sub('--file=', '', args[4])
-if(length(args) != 7) {
+if(length(args) != 8) {
 	cat("usage:", code.source, "input.tsv output.tsv\n")
 	q()
 }
@@ -12,7 +12,7 @@ data.dir <- dirname(code.source)
 align.path <- args[6]
 out.path <- args[7]
 library(parallel)
-options(mc.cores = detectCores())
+options(mc.cores = as.interger(args[8]))
 library(data.table)
 library(lpSolve)
 
