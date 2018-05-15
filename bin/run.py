@@ -54,7 +54,7 @@ if __name__ == '__main__':
     args, _ = parser.parse_known_args()
 
     logger.info('Sample_id: {} Input file: {}'.format(args.sample_id, args.input_bam_path))
-    out_local_path = join('hla-' + args.sample_id, args.sample_id + '.json')
+    out_local_path = join('data','work',args.sample_id,'hla','hla.json')
     bin_path = join(dirname(abspath(__file__)), 'typer.sh')
     bin_args = [bin_path, args.input_bam_path, args.sample_id, str(args.cores)]
     if args.delete:
@@ -64,12 +64,12 @@ if __name__ == '__main__':
 
     check_call(bin_args)
 
-    out_final_path = join(args.output_path, 'report-'+args.sample_id+'-hla.json')
+    out_final_path = join('data','final',args.sample_id,'report-hla.json')
     output_file(out_local_path, out_final_path)
-    done_path = join('hla-' + args.sample_id, '_SUCCESS')
-    open(done_path, 'a').close()
-    done_final_path = join(args.output_path, '_SUCCESS')
-    output_file(done_path, done_final_path)
+    #done_path = join('hla-' + args.sample_id, '_SUCCESS')
+    #open(done_path, 'a').close()
+    #done_final_path = join(args.output_path, '_SUCCESS')
+    #output_file(done_path, done_final_path)
 
     logger.info('Successfully wrote output file')
     logger.info('HLA typing: shutting down.')
