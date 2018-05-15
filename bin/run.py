@@ -45,7 +45,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='HLA typing')
     parser.add_argument('--sample_id', type=str, required = True, help='Sample ID/Name')
     parser.add_argument('--input_bam_path', type=str, required = True, help='Input file')
-    parser.add_argument('--output_path', type=str, required = True, help='Output directory')
+    #parser.add_argument('--output_path', type=str, required = True, help='Output directory')
     parser.add_argument('--cores', type=int, default=1, help='Number of cores available')
     parser.add_argument('--delete', action="store_true",
                         help='Delete all intermediate files')
