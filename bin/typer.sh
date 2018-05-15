@@ -11,7 +11,7 @@ BIN="`dirname \"$0\"`"
 S3=$1
 ID=$2
 CORE=$3
-OUT=hla-$ID
+OUT=data/work/$ID/hla
 DELETE=false
 FULL=false
 
